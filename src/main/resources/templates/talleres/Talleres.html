@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html
+        class="loading"
+        lang="es"
+        data-textdirection="ltr"
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        layout:decorate="~{layout/layout}">
+
+<head th:replace="layout/layout::head"></head>
+
+<body>
+    <div class="content-body" layout:fragment="page-content">
+        <div class="content-overlay"></div>
+        <div class="header-navbar-shadow"></div>
+
+        <div class="content-wrapper">
+            <div class="row" id="table-responsive">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body ">
+                            <div class="form-modal-ex">
+                                <button type="button" class="btn btn-primary" id="btn_nuevo" data-toggle="modal" data-target="#modal_agregar">
+                                    <i data-feather="plus"></i>
+                                    <span>Nuevo</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="table-responsive">
+                                <table class="table mb-1" id="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" class="text-nowrap">#</th>
+                                            <th scope="col" class="text-nowrap">PROGRAMA</th>
+                                            <th scope="col" class="text-nowrap">TAMA</th>
+                                            <th scope="col" class="text-nowrap">FECHA & HORA</th>
+                                            <th scope="col" class="text-nowrap">LUGAR</th>
+                                            <th scope="col" class="text-nowrap">DIRECCIÓN</th>
+                                            <th scope="col" class="text-nowrap">ACCIÓN</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade text-left" id="modal_agregar" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="titulo_modal">
+                            Nuevo
+                        </h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="limpiar()">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                    <div class="modal-body">
+                        <input type="hidden" class="form-control" id="id"  />
+                        <div class="form-group">
+                          <label for="programa">Programa</label>
+                            <select class="form-control mb-1" id="programa"></select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="tema">Tema</label>
+                            <input type="text" id="tema" placeholder="Ingresa el tema" class="form-control" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="fecha">Fecha</label>
+                            <input type="date" id="fecha" placeholder="Ingresa la fecha" class="form-control" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="hora">Hora</label>
+                            <input type="text" id="hora" placeholder="Ingresa hora" class="form-control" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="lugar">Lugar</label>
+                            <input type="text" id="lugar" placeholder="Ingresa el lugar" class="form-control" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="direccion">Dirección</label>
+                            <input type="text" id="direccion" placeholder="Ingresa una descripción" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-secondary" data-dismiss="modal" onclick="limpiar()">
+                            Cancelar
+                        </button>
+                        <button type="button" class="btn btn-primary" id="btn_guardar">
+                            Guardar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <th:block layout:fragment="page-scripts">
+        <script th:src="@{/js/taller.js}"></script>
+    </th:block>
+    
+</body>
+</html>

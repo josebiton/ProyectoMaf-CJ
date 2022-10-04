@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html 
+    class="loading" lang="en" 
+    data-textdirection="ltr"
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+    layout:decorate="~{layout/layout}">
+
+    <head th:replace="layout/layout :: head"></head>
+
+<body>
+    <div class="content-body" layout:fragment="page-content">
+        <div class="content-overlay"></div>
+        <div class="header-navbar-shadow"></div>
+
+        <div class="row" id="table-responsive">
+            <div class="col-6">
+                <div class="card">
+                    <div class="card-body px-1">
+                        <div class="form-modal-ex">
+
+                            <button type="button" class="btn btn-primary" data-toggle="modal"
+                                data-target="#inlineForm">Nuevo <i data-feather='plus'></i>
+
+                            </button>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header ">
+                                <h4 class="card-title">Lista de Facultades</h4>
+                            </div>
+
+                            <div class="table-responsive">
+                                <table class="table mb-1">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" class="text-nowrap">#</th>
+                                            <th scope="col" class="text-nowrap">FACULTAD</th>
+                                            <th scope="col" class="text-nowrap">ABREVIATURA</th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tabla -->
+            <div class="col-6">
+                <div class="card">
+
+                    <div class="card-body px-1">
+
+
+                        <div class="form-modal-ex">
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#nuevo">Nuevo
+                                <i data-feather='plus'></i>
+                            </button>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header ">
+                                <h4 class="card-title">Lista de Escuelas</h4>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table mb-1">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" class="text-nowrap">#</th>
+                                            <th scope="col" class="text-nowrap">FACULTAD</th>
+                                            <th scope="col" class="text-nowrap">ESCUELA</th>
+
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MODAL 1 -->
+        <div class="modal fade text-left" id="inlineForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel33"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="myModalLabel33">Nueva Facultad</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form action="#">
+                        <div class="modal-body">
+                            <label>Facultad: </label>
+                            <div class="form-group">
+                                <input type="text" placeholder="Ingresa el nombre de la facultad"
+                                    class="form-control" />
+                            </div>
+
+                            <label>Abreviatura: </label>
+                            <div class="form-group">
+                                <input type="text" placeholder="Ingresa su abreviatura" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Añadir</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- MODAL 2 -->
+        <div class="modal fade text-left" id="nuevo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel33"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="myModalLabel33">Nueva Escuela Académica</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form action="#">
+                        <div class="modal-body">
+                            <label>Facultad: </label>
+                            <div class="form-group">
+                                <select class="form-control mb-1" id="selectLarge">
+                                    <option selected>Selecione la facultad</option>
+                                    <option value="1">One</option>
+                                    <option value="2">Two</option>
+                                    <option value="3">Three</option>
+                                    </selec>
+                            </div>
+
+                            <label>Escuela: </label>
+                            <div class="form-group">
+                                <input type="text" placeholder="Ingresa el nombre de la escuela" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Añadir</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <th:block layout:fragment="page-scripts"> </th:block>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html class="loading" lang="en" 
+      data-textdirection="ltr"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/layout}">
+    
+<head th:replace="layout/layout :: head"></head>
+
+<body>
+    <div class="content-body" layout:fragment="page-content">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Bienvenidos 🚀</h4>
+            </div>
+        </div>
+
+        <section id="card-demo-example">
+            <div class="row match-height">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card">
+                        <img class="card-img-top" src="/img/co-1.png" alt="Card image cap" />
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card">
+                        <img class="card-img-top" src="/img/ps-1.png" alt="Card image cap" />
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card">
+                        <img class="card-img-top" src="/img/ia-1.png" alt="Card image cap" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <th:block layout:fragment="page-scripts"> </th:block>
+
+</body>
+</html>

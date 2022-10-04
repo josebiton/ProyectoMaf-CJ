@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html
+  class="loading"
+  lang="en"
+  data-textdirection="ltr"
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  layout:decorate="~{layout/layout}">
+    
+  <head th:replace="layout/layout :: head"></head>
+ 
+   <body>
+     <div class="content-body" layout:fragment="page-content">
+         <div class="content-overlay"></div>
+         <div class="header-navbar-shadow"></div>
+
+         <div class="card">
+             <div class="card-body">
+                 <div class="row">
+                     <div class="col-md-3">
+                         <div class="form-group">
+                             <label for="selectLarge">Taller</label>
+                             <select class="form-control mb-1" id="selectLarge">
+                                 <option selected>Seleciona el taller</option>
+                                 <option value="1">One</option>
+                                 <option value="2">Two</option>
+                                 <option value="3">Three</option>
+                             </select>
+                         </div>
+                     </div>
+
+                     <div class="col-md-3">
+                         <div class="form-group">
+                             <label for="fp-default">Fecha</label>
+                             <input type="text" id="fecha" class="form-control flatpickr-basic"
+                                 placeholder="YYYY-MM-DD" />
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+
+         <div class="row" id="table-responsive">
+             <div class="col-12">
+                 <div class="card">
+                     <div class="card-header">
+                         <h4 class="card-title">Reporte de Respuestas</h4>
+                     </div>
+
+                     <div class="table-responsive">
+                         <table class="table mb-0">
+                             <thead>
+                                 <tr>
+                                     <th scope="col" class="text-nowrap">#</th>
+                                     <th scope="col" class="text-nowrap">DNI</th>
+                                     <th scope="col" class="text-nowrap">Pregunta 1</th>
+                                     <th scope="col" class="text-nowrap">Pregunta 2</th>
+                                     <th scope="col" class="text-nowrap">Pregunta 3</th>
+                                     <th scope="col" class="text-nowrap">Pregunta 4</th>
+                                     <th scope="col" class="text-nowrap">Pregunta 5</th>
+                                     <th scope="col" class="text-nowrap">Pregunta 6</th>
+                                     <th scope="col" class="text-nowrap">Pregunta 7</th>
+                                     <th scope="col" class="text-nowrap">Pregunta 8</th>
+                                 </tr>
+                             </thead>
+                         </table>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+
+     <th:block layout:fragment="page-scripts"> </th:block>
+     
+ </body>
+
+</html>

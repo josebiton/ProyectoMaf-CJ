@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html 
+    class="loading" lang="en" 
+    data-textdirection="ltr"
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout/layout}">
+
+    <head th:replace="layout/layout::head"></head>
+    
+<body>
+    <div class="content-body" layout:fragment="page-content">
+        <div class="content-overlay"></div>
+        <div class="header-navbar-shadow"></div>
+        <div class="row" id="table-responsive">
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-body px-0">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="taller">Taller</label>
+                                <select class="form-control mb-1" id="taller">
+                                </select>
+                            </div>
+                        </div>
+
+                        <input type="hidden" id="persona">
+                        <input type="hidden" id="fecha">
+
+                        <div class="col-md-12">
+                            <label for="dni">N° de DNI</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="persona_dni" placeholder="Ingrese su DNI"
+                                    aria-describedby="button-addon2" maxlength="9"/>
+                                <div class="input-group-append" id="button-addon2">
+                                    <button class="btn btn-outline-primary" type="button" data-toggle="tooltip"
+                                        data-original-title="Agregar nueva persona" id="btn_modal_persona">
+                                        <i data-feather='plus'></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <button type="button" class="btn btn-primary btn-block my-1 waves-effect waves-float waves-light" id="btn_registrar_asistencia">
+                                Registrar
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-8">
+                <div class="card">
+                    <div class="card-header ">
+                        <h4 class="card-title" id="titulo_reporte">Lista de asistencia: -- del --</h4>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="table mb-0" id="table_reporte">
+                            <thead>
+                                <tr>
+                                    <th scope="col" class="text-nowrap">#</th>
+                                    <th scope="col" class="text-nowrap">DNI</th>
+                                    <th scope="col" class="text-nowrap">PERSONA</th>
+                                    <th scope="col" class="text-nowrap">TIPO</th>
+                                    <th scope="col" class="text-nowrap">FECHA</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Agregar Persona-->
+        <div class="modal fade text-left" id="modal_agregar_persona" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="titulo_modal_persona">
+                            Agregar nueva persona
+                        </h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="limpiar_persona()">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                    <div class="card-body" id="section_block">
+                        <input type="hidden" class="form-control" id="id"  />
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="dni">N° de DNI</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="dni" placeholder="Ingrese su DNI"
+                                           aria-describedby="button-addon2" />
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-primary" id="btn_consultar_dni" type="button" data-toggle="tooltip"
+                                                data-original-title="Buscar persona">
+                                            <i data-feather="search"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="tipo_persona">Tipo de Persona</label>
+                                    <select class="form-control mb-1" id="tipo_persona"></select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="nombres">Nombres</label>
+                                    <input type="text" id="nombres" class="form-control"
+                                           placeholder="Ingresa un nombre" />
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="apellido_paterno">Apellido Paterno</label>
+                                    <input type="text" id="apellido_paterno" class="form-control"
+                                           placeholder="Ingresa apellido paterno" />
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="apellido_materno">Apellido Materno</label>
+                                    <input type="text" id="apellido_materno" class="form-control"
+                                           placeholder="Ingresa apellido materno" />
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="escuela">Escuela</label>
+                                    <select class="form-control mb-1" id="escuela"></select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="codigo">Codigo</label>
+                                    <input type="text" class="form-control" id="codigo"
+                                           placeholder="Ingresa codigo de estudiante" />
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="ciclo">Ciclo</label>
+                                    <select class="form-control mb-1" id="ciclo">
+                                        <option selected>Seleciona el ciclo</option>
+                                        <option value="1">I</option>
+                                        <option value="2">II</option>
+                                        <option value="3">III</option>
+                                        <option value="4">IV</option>
+                                        <option value="5">V</option>
+                                        <option value="6">VI</option>
+                                        <option value="7">VII</option>
+                                        <option value="8">VIII</option>
+                                        <option value="9">IX</option>
+                                        <option value="10">X</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-outline-secondary" data-dismiss="modal" onclick="limpiar_persona()">
+                                    Cancelar
+                                </button>
+                                <button type="button" class="btn btn-primary" id="btn_guardar_persona">
+                                    Guardar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <th:block layout:fragment="page-scripts">
+        <script th:src="@{/js/asistencia.js}"></script>
+    </th:block>
+
+</body>
+</html>

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+    <head th:fragment="heada">
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+
+        <title>UPeU Talleres</title>
+
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600"
+            rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+
+        <link rel="stylesheet" type="text/css" th:href="@{/cssweb/vendors.min.css}">
+        <link rel="stylesheet" type="text/css" th:href="@{/cssweb/nouislider.min.css}">
+        <link rel="stylesheet" type="text/css" th:href="@{/cssweb/toastr.min.css}">
+        <link rel="stylesheet" type="text/css" th:href="@{/cssweb/bootstrap.css}">
+        <link rel="stylesheet" type="text/css" th:href="@{/cssweb/bootstrap-extended.css}">
+        <link rel="stylesheet" type="text/css" th:href="@{/cssweb/colors.css}">
+        <link rel="stylesheet" type="text/css" th:href="@{/cssweb/components.css}">
+        <link rel="stylesheet" type="text/css" th:href="@{/cssweb/dark-layout.css}">
+        <link rel="stylesheet" type="text/css" th:href="@{/cssweb/bordered-layout.css}">
+        <link rel="stylesheet" type="text/css" th:href="@{/cssweb/semi-dark-layout.css}">
+        <link rel="stylesheet" type="text/css" th:href="@{/cssweb/horizontal-menu.css}">
+        <link rel="stylesheet" type="text/css" th:href="@{/cssweb/ext-component-sliders.css}">
+        <link rel="stylesheet" type="text/css" th:href="@{/cssweb/app-ecommerce.css}">
+        <link rel="stylesheet" type="text/css" th:href="@{/cssweb/ext-component-toastr.css}">
+        <link rel="stylesheet" type="text/css" th:href="@{/cssweb/style.css}">
+
+    </head>
+    <!-- pace-done vertical-layout vertical-menu-modern blank-page navbar-floating -->
+    <body class="pace-done vertical-layout vertical-menu-modern blank-page navbar-floating footer-static  " data-open="hover"
+    data-menu="horizontal-menu" data-col="">
+
+    <nav class="navbar header-navbar navbar navbar-shadow align-items-center navbar-light navbar-expand fixed-top" style="left: 0px !important;">
+        <div class="navbar-container d-flex content">
+            <div class="bookmark-wrapper d-flex align-items-center">
+                <ul class="nav navbar-nav d-xl-none">
+                    <li class="nav-item"><a class="nav-link menu-toggle" href="javascript:void(0);"><i class="ficon" data-feather="menu"></i></a></li>
+                </ul>
+            </div>
+            <img th:src="@{/img/logo.svg}" alt="alt" width="150px"/>
+            <ul class="nav navbar-nav align-items-center ml-auto">
+                <li class="dropdown-menu-footer">
+                    <a class="btn btn-primary btn-block" href="/menu">
+                        Ingresar
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <div class="app-content content ecommerce-application">
+        <div class="content-overlay"></div>
+       
+        <div class="card-body pt-5 px-0">
+            <div id="carousel-example-caption" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-example-caption" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-example-caption" data-slide-to="1"></li>
+                    <li data-target="#carousel-example-caption" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item active">
+                        <img class="img-fluid" src="img/baner-upeu.png"  alt="First slide" />
+                        <div class="carousel-caption">
+                            <h1 class="text-white">Objetivo</h1>
+                            <p class="text-white">
+                                Empoderar familias para su desarrollo sostenible y el cuidado de la salud.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img class="img-fluid" src="img/imagen2.png" alt="Second slide" />
+                        <div class="carousel-caption">
+                            <h3 class="text-white">Objetivo</h3>
+                            <p class="text-white">
+                                Empoderar familias para su desarrollo sostenible y el cuidado de la salud.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img class="img-fluid" src="img/imgen5.png" alt="Third slide" />
+                        <div class="carousel-caption">
+                            <h3 class="text-white">Objetivo</h3>
+                            <p class="text-white">
+                                Empoderar familias para su desarrollo sostenible y el cuidado de la salud.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carousel-example-caption" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carousel-example-caption" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+        
+        <div class="content-wrapper container-xxl p-0">
+
+            <div style="margin: 0 120px 0 120px">
+
+                <div class="content-detached">
+                    <div class="content-body">
+                        
+                        <br><br>
+                        <!-- E-commerce Content Section Starts -->
+                        <section id="ecommerce-header">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h2 class="text-center h1 text-font-we" style="color: #003865; font-weight: bolder">CONOSCA NUESTROS TALLERES</h2>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="ecommerce-header-items">
+                                        <div class="view-options d-flex">
+                                            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                                <label class="btn btn-icon btn-outline-primary view-btn grid-view-btn">
+                                                    <input type="radio" name="radio_options" id="radio_option1" checked />
+                                                    <i data-feather="grid" class="font-medium-3"></i>
+                                                </label>
+                                                <label class="btn btn-icon btn-outline-primary view-btn list-view-btn">
+                                                    <input type="radio" name="radio_options" id="radio_option2" />
+                                                    <i data-feather="list" class="font-medium-3"></i>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <!-- E-commerce Content Section Starts -->
+
+                        <!-- background Overlay when sidebar is shown  starts-->
+                        <div class="body-content-overlay"></div>
+                        <!-- background Overlay when sidebar is shown  ends-->
+
+                        <!-- E-commerce Products Starts -->
+                        <section id="ecommerce-products" class="grid-view mt-2">
+                            <div class="card ecommerce-card ">
+                                <div class="item-img text-center">
+                                    <a href="app-ecommerce-details.html">
+                                        <img class="img-fluid card-img-top" src="img/resilencia.png" alt="img-placeholder" />
+                                    </a>
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="item-name">
+                                        <a class="text-body" href="app-ecommerce-details.html">Tema: La resiliencia</a>
+                                    </h6>
+                                    <p class="card-text">
+                                        Programa: Bienestar emocional y salud mental
+                                    </p>
+                                    
+                                    <p class="card-text">
+                                        Fecha: 2022/07/10
+                                    </p>
+                                    
+                                </div>
+                                <div class="item-options text-center">
+                                    <a href="javascript:void(0)" class="btn btn-primary btn-cart">
+                                        <i data-feather='eye'></i>
+                                        <span class="add-to-cart">Ver más detalles</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card ecommerce-card ">
+                                <div class="item-img text-center">
+                                    <a href="app-ecommerce-details.html">
+                                        <img class="img-fluid card-img-top" src="img/resilencia.png" alt="img-placeholder" />
+                                    </a>
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="item-name">
+                                        <a class="text-body" href="app-ecommerce-details.html">Tema: La resiliencia</a>
+                                    </h6>
+                                    <p class="card-text">
+                                        Programa: Bienestar emocional y salud mental
+                                    </p>
+                                    
+                                    <p class="card-text">
+                                        Fecha: 2022/07/10
+                                    </p>
+                                    
+                                </div>
+                                <div class="item-options text-center">
+                                    <a href="javascript:void(0)" class="btn btn-primary btn-cart">
+                                        <i data-feather='eye'></i>
+                                        <span class="add-to-cart">Ver más detalles</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card ecommerce-card ">
+                                <div class="item-img text-center">
+                                    <a href="app-ecommerce-details.html">
+                                        <img class="img-fluid card-img-top" src="img/resilencia.png" alt="img-placeholder" />
+                                    </a>
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="item-name">
+                                        <a class="text-body" href="app-ecommerce-details.html">Tema: La resiliencia</a>
+                                    </h6>
+                                    <p class="card-text">
+                                        Programa: Bienestar emocional y salud mental
+                                    </p>
+                                    
+                                    <p class="card-text">
+                                        Fecha: 2022/07/10
+                                    </p>
+                                    
+                                </div>
+                                <div class="item-options text-center">
+                                    <a href="javascript:void(0)" class="btn btn-primary btn-cart">
+                                        <i data-feather='eye'></i>
+                                        <span class="add-to-cart">Ver más detalles</span>
+                                    </a>
+                                </div>
+                            </div>
+                                        
+                        </section>
+                        <!-- E-commerce Products Ends -->
+                    </div>
+                </div>
+                <br><br>
+                <section id="media-player-wrapper">
+                    <div class="row my-2">
+                        <div class="col-12">
+                            <h2 class="text-center h1 text-font-we" style="color: #003865; font-weight: bolder">VIDEOS REFERENCIALES</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <!-- VIDEO -->
+                        <div class="col-6">
+                            <div class="card">
+                                
+                                <div class="card-body">
+                                    <div class="video-player" id="plyr-video-player">
+                                        <iframe src="https://www.youtube.com/embed/-fyp-bPgVwI"
+                                                allowfullscreen allow="autoplay" width="100%" height="300px"></iframe>
+                                    </div>
+                                </div>
+                            </div>
+                                
+                        </div>
+                        
+                        <div class="col-6">
+                            <div class="card"> 
+                                <div class="card-body ">
+                                    <div class="video-player" id="plyr-video-player">
+                                        <iframe src="https://www.youtube.com/embed/VKFEgdOZrLY"
+                                            allowfullscreen allow="autoplay" width="100%" height="300px"></iframe>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--/ VIDEO -->
+
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <div class="sidenav-overlay"></div>
+    <div class="drag-target"></div>
+
+    <!-- BEGIN: Footer-->
+    <footer class="footer footer-static footer-light">
+        <p class="clearfix mb-0"><span class="float-md-left d-block d-md-inline-block mt-25">COPYRIGHT &copy; 2021<a
+                    class="ml-25" href="https://1.envato.market/pixinvent_portfolio" target="_blank">Pixinvent</a><span
+                    class="d-none d-sm-inline-block">, All rights Reserved</span></span><span
+                class="float-md-right d-none d-md-block">Hand-crafted & Made with<i data-feather="heart"></i></span></p>
+    </footer>
+    <button class="btn btn-primary btn-icon scroll-top" type="button"><i data-feather="arrow-up"></i></button>
+    <!-- END: Footer-->
+
+
+      <!-- BEGIN: Vendor JS-->
+    <script th:src="@{/jsweb/vendors.min.js}"></script>
+    <!-- BEGIN Vendor JS-->
+
+    <!-- BEGIN: Page Vendor JS-->
+    <script th:src="@{/jsweb/jquery.sticky.js}"></script>
+    <script th:src="@{/jsweb/wNumb.min.js}"></script>
+    <script th:src="@{/jsweb/nouislider.min.js}"></script>
+    <script th:src="@{/jsweb/toastr.min.js}"></script>
+    <!-- END: Page Vendor JS-->
+
+    <!-- BEGIN: Theme JS-->
+    <script th:src="@{/jsweb/app-menu.js}"></script>
+    <script th:src="@{/jsweb/app.js}"></script>
+    <!-- END: Theme JS-->
+
+    <!-- BEGIN: Page JS-->
+    <script th:src="@{/jsweb/app-ecommerce.js}"></script>
+    <!-- END: Page JS-->
+
+    <script>
+        $(window).on('load', function () {
+            if (feather) {
+                feather.replace({
+                    width: 14,
+                    height: 14
+                });
+            }
+        })
+    </script>
+
+    <th:block layout:fragment="page-scrip"></th:block>
+
+</body> 
+</html>
